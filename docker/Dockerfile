@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3.6.0-openjdk-11-alpine AS builder
+FROM openjdk:8u151-jdk-alpine3.7 AS builder
 WORKDIR /usr/src/app
 COPY pom.xml .
 RUN mvn dependency:go-offline
