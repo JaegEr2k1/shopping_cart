@@ -68,8 +68,8 @@ pipeline {
                 --region ${AWS_REGION} \
                 --force-new-deployment \
                 --desired-count 1 \
-                --network-configuration "awsvpcConfiguration={subnets=[\"${SUBNET_ID}\"],securityGroups=[\"${SG_ID}\"],assignPublicIp=ENABLED}"
-               --load-balancers '
+                --network-configuration "awsvpcConfiguration={subnets=[\"${SUBNET_ID}\"],securityGroups=[\"${SG_ID}\"],assignPublicIp=ENABLED}" \
+                --load-balancers ' \
                 [{ \
                 "containerName": "${PROJECT_NAME}", \
                 "containerPort": 8070, \
