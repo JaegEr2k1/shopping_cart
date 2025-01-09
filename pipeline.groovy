@@ -69,13 +69,6 @@ pipeline {
                 --force-new-deployment \
                 --desired-count 1 \
                 --network-configuration "awsvpcConfiguration={subnets=[\"${SUBNET_ID}\"],securityGroups=[\"${SG_ID}\"],assignPublicIp=ENABLED}" \
-                --load-balancers ' \
-                [{ \
-                "containerName": "${PROJECT_NAME}", \
-                "containerPort": 8070, \
-                "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:325842618176:targetgroup/shopping-cart-tg/4dc3453602357775" \
-                }] \
-                ' \
                 '''
               }
         }
