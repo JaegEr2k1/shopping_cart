@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage('Git-Checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: "${REPO}"
+                git branch: 'main', url: "${REPO}"
             }
         }
         stage('Compile') {
